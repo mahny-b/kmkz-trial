@@ -22,7 +22,6 @@ public class ByteUtils {
 	 * @return　インデックス番号（見つからなかったら-1）
 	 */
 	public static int indexOf(byte[] org, byte[] dest, int fromIndex) {
-
-		return -1;
+		return Integer.MIN_VALUE;
 	}
 }
