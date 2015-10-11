@@ -18,16 +18,17 @@ public class ByteUtils {
 
 	/**
 	 * 指定した配列orgから、部分配列destを探し、そのインデックス番号を返す
+	 * {@link http://capm-network.com/?tag=C%E8%A8%80%E8%AA%9E%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0-BM%E6%B3%95}
 	 * @param org 検索対象の配列
 	 * @param dest 部分配列
 	 * @param fromIndex 検索開始インデックス（負数は0と同じ）
 	 * @return　インデックス番号（見つからなかったら-1）
-	 * {@link http://capm-network.com/?tag=C%E8%A8%80%E8%AA%9E%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0-BM%E6%B3%95}
 	 */
 	public static int indexOf(byte[] org, byte[] dest, int fromIndex) {
-		fromIndex = fromIndex < 0 ? 0 : fromIndex;
 
-		// 前提から死んでるω
+		if (fromIndex < 0) {
+			fromIndex = 0;
+		}
 		if (isEmpty(org) || isEmpty(dest)) {
 			return NOT_FOUND;
 		}
