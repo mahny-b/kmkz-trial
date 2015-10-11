@@ -6,7 +6,7 @@ package jp.gr.java_conf.mahny.util;
  */
 public class ByteUtils {
 
-	private static int NOT_FOUND = -1;
+	private static final int NOT_FOUND = -1;
 
 	/**
 	 * @deprecated newしちゃダメ
