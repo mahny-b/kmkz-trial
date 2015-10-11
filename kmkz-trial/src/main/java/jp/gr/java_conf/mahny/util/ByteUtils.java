@@ -56,11 +56,9 @@ public class ByteUtils {
 		while(nowIndex < endIndex) {
 			// 後ろから探索
 			for (int i = dest.length - 1; 0 <= i; i--) {
-				byte o = org[nowIndex + i];
-				byte d = dest[i];
 				// 検証
-				if (o != d) {
-					nowIndex += skipTable[d - Byte.MIN_VALUE];
+				if (org[nowIndex + i] != dest[i]) {
+					nowIndex += skipTable[dest[i] - Byte.MIN_VALUE];
 					break;
 				}
 				// 部分配列の最後までヒットしたので発見
